@@ -12,12 +12,16 @@ import com.github.miniyk2012.coding2017.coderising.jvm.method.Method;
 
 public class ExecutorEngine {
 
-	private Stack<StackFrame> stack = new Stack<StackFrame>();
+	private Stack<StackFrame> stack = new Stack<StackFrame>();  // 函数栈帧
 	
 	public ExecutorEngine() {
 		
 	}
-	
+
+	/**
+	 * 这是一个对函数栈帧的操作过程
+	 * @param mainMethod
+	 */
 	public void execute(Method mainMethod){
 		
 		

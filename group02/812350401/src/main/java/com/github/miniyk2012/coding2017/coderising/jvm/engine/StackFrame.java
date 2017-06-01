@@ -14,7 +14,7 @@ public class StackFrame {
 	
 	int index = 0;
 	
-	private Method m = null;
+	private Method m = null;  // 栈帧和函数绑定
 	
 	private StackFrame callerFrame = null;
 	
@@ -62,7 +62,12 @@ public class StackFrame {
 		}
 		throw new RuntimeException("Can't find next command");
 	}
-	
+
+	/**
+	 * 从某个index位置继续执行函数，返回结果。
+     * 有可能直接运行到return结束，也有可能运行到中间调用了一个新函数，那么就保留现场，待下次执行
+	 * @return
+	 */
 	public ExecutionResult execute(){
 		return null;
 		
