@@ -27,9 +27,13 @@ public class ExecutorEngine {
 		
 		
 	}
-	
-	
-	
+
+
+    /**
+     * 把当前栈帧的参数给下一个函数栈帧
+     * @param currentFrame
+     * @param nextFrame
+     */
 	private void setupFunctionCallParams(StackFrame currentFrame,StackFrame nextFrame) {
 		
 		

@@ -5,6 +5,8 @@ import com.github.miniyk2012.coding2017.coderising.jvm.clz.ClassFile;
 import com.github.miniyk2012.coding2017.coderising.jvm.constant.ConstantInfo;
 import com.github.miniyk2012.coding2017.coderising.jvm.constant.ConstantPool;
 import com.github.miniyk2012.coding2017.coderising.jvm.constant.StringInfo;
+import com.github.miniyk2012.coding2017.coderising.jvm.engine.ExecutionResult;
+import com.github.miniyk2012.coding2017.coderising.jvm.engine.StackFrame;
 
 public class LdcCmd extends OneOperandCmd {
 
@@ -26,5 +28,10 @@ public class LdcCmd extends OneOperandCmd {
 		return this.getOffset()+":"+this.getOpCode()+" " + this.getReadableCodeText() + " "+  value;
 		
 	}
-	
+
+	@Override
+	public void execute(StackFrame frame, ExecutionResult result) {
+
+	}
+
 }

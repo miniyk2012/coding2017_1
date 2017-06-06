@@ -4,6 +4,7 @@ public class Heap {
 	
 	/**
 	 * 没有实现垃圾回收， 所以对于下面新创建的对象， 并没有记录到一个数据结构当中
+	 * 所以说Heap只具有创建javaObject的功能
 	 */
 	
 	private static Heap instance = new Heap();
