@@ -11,6 +11,7 @@ public class Heap {
 	private Heap() {		
 	}
 	public static Heap getInstance(){
+
 		return instance;
 	}
 	public JavaObject newObject(String clzName){

@@ -9,6 +9,9 @@ import org.junit.Test;
 public class MiniJVMTest {
 	
 	static final String PATH = "C:\\Users\\liuxin\\git\\coding2017\\liuxin\\mini-jvm\\answer\\bin";
+	static String PATH1 = MiniJVMTest.class.getClassLoader().getResource("struts").getPath();
+	static String PATH2 = MiniJVMTest.class.getClassLoader().getResource("jvm").getPath();
+
 	@Before
 	public void setUp() throws Exception {
 	}
@@ -19,7 +22,7 @@ public class MiniJVMTest {
 
 	@Test
 	public void testMain() throws Exception{
-		String[] classPaths = {PATH};
+		String[] classPaths = {PATH, PATH1, PATH2};
 		MiniJVM jvm = new MiniJVM();
 		jvm.run(classPaths, "com.coderising.jvm.test.EmployeeV1");
 		

@@ -10,6 +10,9 @@ import com.github.miniyk2012.coding2017.coderising.jvm.cmd.ByteCodeCommand;
 import com.github.miniyk2012.coding2017.coderising.jvm.constant.MethodRefInfo;
 import com.github.miniyk2012.coding2017.coderising.jvm.method.Method;
 
+/**
+ * 我们只考虑单线程的执行引擎
+ */
 public class ExecutorEngine {
 
 	private Stack<StackFrame> stack = new Stack<StackFrame>();  // 函数栈帧
