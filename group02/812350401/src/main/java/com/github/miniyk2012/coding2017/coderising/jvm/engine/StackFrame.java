@@ -9,10 +9,10 @@ import com.github.miniyk2012.coding2017.coderising.jvm.method.Method;
 
 public class StackFrame {
 	
-	private List<JavaObject> localVariableTable = new ArrayList<JavaObject>();
-	private Stack<JavaObject> oprandStack = new Stack<JavaObject>();
+	private List<JavaObject> localVariableTable = new ArrayList<>();
+	private Stack<JavaObject> oprandStack = new Stack<>();
 	
-	int index = 0;
+	int index = 0;  // 保存接下来要执行的那个命令的下标
 	
 	private Method m = null;  // 栈帧和函数绑定
 	
@@ -25,9 +25,6 @@ public class StackFrame {
 	public void setCallerFrame(StackFrame callerFrame) {
 		this.callerFrame = callerFrame;
 	}
-
-	
-	
 	
 	public static  StackFrame create(Method m){
 		
@@ -41,10 +38,9 @@ public class StackFrame {
 		this.m = m;
 		
 	}
-	
-	
-	
+
 	public JavaObject getLocalVariableValue(int index){
+
 		return this.localVariableTable.get(index);
 	}
 	

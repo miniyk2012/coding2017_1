@@ -12,9 +12,8 @@ public class NewObjectCmd extends TwoOperandCmd{
 	}
 
 	@Override
-	public String toString(ConstantPool pool) {
-		
-		return super.getOperandAsClassInfo(pool);
+	public String toString() {
+		return super.getOperandAsClassInfo();
 	}
 
 	@Override

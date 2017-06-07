@@ -14,9 +14,9 @@ public class GetStaticFieldCmd extends TwoOperandCmd {
 	}
 
 	@Override
-	public String toString(ConstantPool pool) {
+	public String toString() {
 		
-		return super.getOperandAsField(pool);
+		return super.getOperandAsField();
 	}
 
 	@Override

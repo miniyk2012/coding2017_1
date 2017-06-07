@@ -111,8 +111,6 @@ public abstract class ByteCodeCommand {
 		return buffer.toString();
 	}
 
-	public abstract String toString(ConstantPool pool);
-	
 	public String getReadableCodeText(){
 		String txt = codeMap.get(opCode);
 		if(txt == null){

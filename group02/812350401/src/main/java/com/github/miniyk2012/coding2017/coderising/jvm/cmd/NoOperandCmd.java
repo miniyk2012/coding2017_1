@@ -12,7 +12,7 @@ public class NoOperandCmd extends ByteCodeCommand{
 	}
 
 	@Override
-	public String toString(ConstantPool pool) {
+	public String toString() {
 		return this.getOffset()+":" +this.getOpCode() + " "+ this.getReadableCodeText();
 	}
 

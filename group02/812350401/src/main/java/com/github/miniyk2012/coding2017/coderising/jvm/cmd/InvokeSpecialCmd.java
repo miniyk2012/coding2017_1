@@ -13,9 +13,9 @@ public class InvokeSpecialCmd extends TwoOperandCmd {
 	}
 
 	@Override
-	public String toString(ConstantPool pool) {
+	public String toString() {
 		
-		return super.getOperandAsMethod(pool);
+		return super.getOperandAsMethod();
 	}
 
 	@Override
