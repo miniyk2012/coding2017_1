@@ -21,7 +21,7 @@ public class MiniJVMTest {
 
 	@Test
 	public void testMain() throws Exception{
-		String[] classPaths = {PATH2};
+		String[] classPaths = {PATH, PATH2, PATH2};
 		MiniJVM jvm = new MiniJVM();
 
         jvm.run(classPaths, "com.coderising.jvm.test.EmployeeV1");

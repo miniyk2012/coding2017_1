@@ -32,7 +32,7 @@ public class ExecutorEngine {
 				Method nextMethod = result.getNextMethod();
 				StackFrame nextFrame = StackFrame.create(nextMethod);
 				nextFrame.setCallerFrame(frame);				
-				setupFunctionCallParams(frame,nextFrame);
+				setupFunctionCallParams(frame, nextFrame);
 				
 				stack.push(nextFrame);
 				

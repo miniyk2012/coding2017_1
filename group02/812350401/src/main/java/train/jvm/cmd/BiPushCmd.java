@@ -23,7 +23,6 @@ public class BiPushCmd extends OneOperandCmd {
 		int value = this.getOperand();
 		JavaObject jo = Heap.getInstance().newInt(value);
 		frame.getOprandStack().push(jo);
-		
 	}
 	
 
