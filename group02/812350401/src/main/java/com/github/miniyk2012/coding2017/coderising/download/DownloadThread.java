@@ -15,14 +15,14 @@ public class DownloadThread extends Thread{
 	String fileName;
     CyclicBarrier barrier;
 
-	public DownloadThread(String name, Connection conn, int startPos, int endPos, String fileName, CyclicBarrier barrier){
-		super(name);
-		this.conn = conn;		
-		this.startPos = startPos;
-		this.endPos = endPos;
-		this.fileName = fileName;
-		this.barrier = barrier;
-	}
+    public DownloadThread(String name, Connection conn, int startPos, int endPos, String fileName, CyclicBarrier barrier){
+        super(name);
+        this.conn = conn;
+        this.startPos = startPos;
+        this.endPos = endPos;
+        this.fileName = fileName;
+        this.barrier = barrier;
+    }
 	public void run(){
         try (RandomAccessFile raf = new RandomAccessFile(new File(fileName), "rwd")) {
             raf.seek(startPos);

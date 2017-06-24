@@ -61,12 +61,7 @@ public class FileDownloader {
     }
 
 	public void oneThreadDownload() {
-        final CyclicBarrier barrier = new CyclicBarrier(1 ,new Runnable() {
-            @Override
-            public void run() {
-                getListener().notifyFinished();
-            }
-        });
+        final CyclicBarrier barrier = new CyclicBarrier(1 , () -> getListener().notifyFinished());
         try {
             Thread thread = new DownloadThread("oneThread", conn,0,length, fileName, barrier);
             thread.start();
@@ -78,11 +73,8 @@ public class FileDownloader {
     }
 
     public void threadPoolDownload() throws ConnectionException {
-        final CyclicBarrier barrier = new CyclicBarrier(threadNum ,new Runnable() {
-            @Override
-            public void run() {
-                getListener().notifyFinished();  // 栅栏
-            }
+        final CyclicBarrier barrier = new CyclicBarrier(threadNum , () -> {
+            getListener().notifyFinished();  // 栅栏
         });
         ExecutorService threadPool = Executors.newCachedThreadPool();
         int len = conn.getContentLength();

@@ -24,21 +24,19 @@ public class FileDownloaderTest {
 //		String url = "https://www.baidu.com/img/bd_logo.png";
 		String filePath = "src/main/resources/downloads/test.png";
         FileDownloader downloader = new FileDownloader(url, filePath);
-	
-		ConnectionManager cm = new ConnectionManagerImpl();
-		downloader.setConnectionManager(cm);
-		downloader.setListener(() -> downloadFinished = true);
-		
-		downloader.execute();
-		
-		// 等待多线程下载程序执行完毕
-		while (!downloadFinished) {
-			try {
-				System.out.println("还没有下载完成，休眠0.01秒");
-				time += 0.01;
-				//休眠0.01秒
-				Thread.sleep(10);
-			} catch (InterruptedException e) {				
+        ConnectionManager cm = new ConnectionManagerImpl();
+        downloader.setConnectionManager(cm);
+        downloader.setListener(() -> downloadFinished = true);
+        downloader.execute();
+
+        // 等待多线程下载程序执行完毕
+        while (!downloadFinished) {
+            try {
+                System.out.println("还没有下载完成，休眠0.01秒");
+                time += 0.01;
+                //休眠0.01秒
+                Thread.sleep(10);
+			} catch (InterruptedException e) {
 				e.printStackTrace();
 			}
 		}
